@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import threading
 import time
 from stock_analyzer import StockAnalyzer
@@ -97,13 +97,15 @@ def convert_to_days(period, unit):
     return period
 
 @app.route('/')
+@app.route('/index')
 def index():
-    """首页"""
+    """首页 - 单页面双模式切换"""
     # 获取申万一级行业列表
     sw_industries = get_sw_industries()
     # 获取宽基指数列表
     wide_indexes = get_wide_indexes()
 
+    # 使用统一的模板文件，通过JavaScript实现模式切换
     return render_template('index.html',
                          default_long_period=DEFAULT_LONG_PERIOD,
                          default_long_unit=DEFAULT_LONG_PERIOD_UNIT,
