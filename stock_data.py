@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import time
 import tushare as ts
 import pandas as pd

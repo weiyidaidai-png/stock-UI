@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # 配置文件
 # 请在此处配置您的tushare API token
 # 您可以在https://tushare.pro/register免费注册获取

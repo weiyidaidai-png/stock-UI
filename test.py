@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 测试脚本 - 验证股票筛选工具的基本功能
 """
@@ -85,7 +86,7 @@ def test_stock_details(stock_list):
 
     if details:
         print(f"✓ 获取股票详情成功")
-        print(f"  获取到 {len(details['trade_dates'])} 天数据")
+        print(f"  获取到 {len(details['dates'])} 天数据")
         print(f"  最新收盘价: {details['latest_data']['close']:.2f}")
         print(f"  最新5日均线: {details['latest_data']['ma5']:.2f}")
         return True
