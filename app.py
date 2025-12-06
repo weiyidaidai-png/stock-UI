@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import threading
 import time
@@ -9,6 +10,10 @@ from config import validate_config, DEFAULT_LONG_PERIOD, DEFAULT_DIFF_THRESHOLD,
     MONTH_TO_TRADING_DAYS, DAYS_IN_YEAR, MAX_LONG_YEARS
 
 app = Flask(__name__)
+# 配置模板编码
+app.config['TEMPLATE_AUTO_RELOAD'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 
 # 全局变量
 analyzer = None
